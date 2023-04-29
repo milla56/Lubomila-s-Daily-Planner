@@ -1,4 +1,5 @@
 var containerId = $("#container");
+var saveBtn = $('.save button');
 
 // Current Day
 // $(document).ready(function (){
@@ -31,7 +32,21 @@ else (currentHour < timeDiv);{
 }
 })
 
+// save btn
 
+saveBtn.on("click",function(event){
+  event.preventDefault();
+
+  let description = $(this).closest(".calendar").find(".calendar-textarea");
+  let input = description.val();
+  let timeInput = $(this).closest(".calendar").find(".time-div").attr('id');
+  localStorage.setItem(timeInput,input);
+}) 
+  
+//remove btn
+
+
+//events on local storage
 
 
 
