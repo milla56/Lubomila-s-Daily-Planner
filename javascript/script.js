@@ -1,14 +1,9 @@
 var containerId = $("#container");
 var saveBtn = $('.save button');
+var timeDiv = $(".time-div"); // time element
+var description = $(".description"); //text area
 
 // Current Day
-// $(document).ready(function (){
-//   let nowMoment = moment().format("MMMM Do YYYY");
-//   let currentDay = $("#currentDay");
-//   currentDay.innerHTML = nowMoment;
-//   let currentHour = moment().format("HH");
-// })
-
 $(document).ready(function(){
 	const currentDay = moment().format('dddd, MMMM Do YYYY');
 	$('#currentDay').html(currentDay);})
@@ -18,38 +13,38 @@ $(document).ready(function(){
 let currentHour = moment().format("HH");
 console.log(currentHour);
 
-$(".calendar").each(function(){
-  var timeDiv = $(this).find(".time-div").attr("id"); //time element
-  var description = $(this).find(".description");     // text area
+timeDiv.each(function(){
+  var timeElement = parseInt($(this).attr('id').split("hour")[1]);
   if (currentHour === timeDiv){
-    description.addClass("present").css ("background-color", "#ff6961");
+    description.addClass("present")
   }
   else if (currentHour > timeDiv){
-    description.addClass("future").css("background-color","#77dd77");
+    description.addClass("future")
   }
 else (currentHour < timeDiv);{
-  description.addClass("past").css("background-color" ,"#d3d3d3")
+  description.addClass("past")
 }
 })
+
+
 
 // save btn
 
 saveBtn.on("click",function(event){
   event.preventDefault();
+ 
+  var textInput = $(this).siblings(".description").val();
+  var time = $(this).parent().attr('id');
 
-  let description = $(this).closest(".calendar").find(".calendar-textarea");
-  let input = description.val();
-  let timeInput = $(this).closest(".calendar").find(".time-div").attr('id');
-  localStorage.setItem(timeInput,input);
+  localStorage.setItem(time,textInput)
+  
 }) 
   
-//remove btn
+//remove btn ?
+
 
 
 //events on local storage
-
-
-
 
  
 
