@@ -16,16 +16,21 @@ console.log(currentHour);
 timeDiv.each(function(){
   var timeElement = parseInt($(this).attr('id').split("hour")[1]);
   if (currentHour === timeDiv){
-    description.addClass("present")
+    description.addClass("present");
+    description.removeClass("future");
+    description.removeClass("past");
   }
   else if (currentHour > timeDiv){
-    description.addClass("future")
+    description.addClass("future");
+    description.removeClass("present");
+    description.removeClass("past");
   }
 else (currentHour < timeDiv);{
-  description.addClass("past")
+  description.addClass("past");
+  description.removeClass("present");
+  description.removeClass("future");
 }
 })
-
 
 
 // save btn
