@@ -3,26 +3,25 @@ Third-Party APIs
 
 ## Description
 
-"Lubomila's Daily Planner" calendar application that allows a user to save events for each hour of the day. The app runs into the browser and feature HTML, CSS, JavaScript, jQuery and Moment Js.
+"Lubomila's Daily Planner" calendar application that allows a user to save events for each hour of the day. The app runs into the browser and features HTML, CSS, JavaScript, jQuery and Moment Js.
 
 ## Installation
 
-Follow the link for the deployed website [Daily-Planner](https://milla56.github.io/Lubomila-s-Code-Quiz/) 
+Follow the link for the deployed website [Daily-Planner](https://milla56.github.io/Lubomila-s-Daily-Planner/) 
 
 ## Usage
 The list shows what steps were made to complete the challenge:
  - Once the planner is open, the user can see the current day at the top of the calendar.
  ![DATE](./screenshots/date.png)
- - In order to display the current date I used Moment.js library.
- - Scrolling down to the planner, the user will be able to see the timeblocks for standard business hours (9am - 5pm).
- - Depending when the timeblock is viewed, the color-code for each timeblock is different based on past,present and future.
- - The users are allow to enter an event, when they click a timbelock. 
-
+ - To display the current date I used Moment.js library.
+ - Scrolling down to the planner, the user will be able to see the time blocks for standard business hours (9am - 5pm).
+ - Depending on when the time block is viewed, the color code for each time block is different based on past, present and future.
+ - The users are allowed to enter an event when they click a timelock. 
  ![SAVE-EVENT](./screenshots/writedown.gif)
- - The event will be saved, when the save button is clicked.
+ - The event will be saved when the "save button" is clicked.
  - If the page is refreshed, the events still will be saved.
  ![REFRESH](./screenshots/refresh.gif)
- - To make the app more personalised, I created different color palette.
+ - To make the app more personalised, I created an individua color palette.
 
 
 
