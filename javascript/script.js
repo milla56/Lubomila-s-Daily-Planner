@@ -3,14 +3,13 @@ var saveBtn = $('.save button');
 var timeDiv = $(".time-div"); // time element
 var description = $(".description"); //text area
 
+// Current Day
 const currentDay = moment().format('dddd, MMMM Do YYYY');
 	$('#currentDay').html(currentDay);
 
-// Current Day
+// Ready, Save Button
 $(document).ready(function(){
-	// const currentDay = moment().format('dddd, MMMM Do YYYY');
-	// $('#currentDay').html(currentDay);
-
+	
   saveBtn.on("click",function(event){
     event.preventDefault();
    
@@ -20,18 +19,16 @@ $(document).ready(function(){
     localStorage.setItem(time,textInput)
     
   }) 
-})
+
 
 
 // time slot compared to actual the actual times
-// let currentHour = moment().format("HH");
-// console.log(currentHour);
+
+function startTime (){
+  var currentHour = moment().hour();
 
 $(".time-div").each(function(){
-  // let currentHour = moment().format("HH");
-  // console.log(currentHour);
-var currentHour = moment().hour();
-
+ 
   var timeElement = parseInt($(this).attr('id').split("hour")[1]);
 
   if (timeElement === currentHour){
@@ -50,6 +47,7 @@ else (timeElement < currentHour);{
   description.addClass("past");
 }
 })
+}
 
 
 // save btn
@@ -79,11 +77,10 @@ $("#hour-14 .description").val(localStorage.getItem("hour-14"));
 $("#hour-15 .description").val(localStorage.getItem("hour-15"));
 $("#hour-16 .description").val(localStorage.getItem("hour-16"));
 $("#hour-17 .description").val(localStorage.getItem("hour-17"));
-$("#hour-18 .description").val(localStorage.getItem("hour-18"));
-$("#hour-19 .description").val(localStorage.getItem("hour-19"));
 
-timeDiv();
 
+startTime();
+});
 
 
 
